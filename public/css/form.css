@@ -1,0 +1,122 @@
+label {
+    /* Other styling... */
+    text-align: right;
+    clear: both;
+    float: left;
+    margin-right: 15px;
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+
+@media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+}
+
+.form-group input {
+    text-align: center;
+}
+
+input::palaceholder {
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+}
+
+.form-group select {
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+}
+
+.page-footer {
+    padding-top: 0px;
+}
+
+.page-footer .footer-copyright {
+    margin-top: 0px;
+}
+
+
+/* ========================================== */
+
+table {
+    border-collapse: collapse;
+}
+
+table.list {
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even),
+table.list thead>tr {
+    background-color: #dddddd;
+}
+
+input[type=text],
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #ddd;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons {
+    text-align: right;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin-right: 4px;
+}
+
+label.validation-error {
+    color: red;
+    margin-left: 5px;
+}
+
+.hide {
+    display: none;
+}

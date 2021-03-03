@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaData Collection</title>
+    <link rel="icon" href="/img/logo.svg" type="image/icon type">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- select2 Liberary for multiselect dropdown -->
+    <script src="/js/select2.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/select2/3.4.5/select2.min.js"></script> -->
+    <link rel="stylesheet" href="/css/select2.min.css">
+    <!-- <link href="https://cdn.bootcss.com/select2/3.4.5/select2.min.css" rel="stylesheet"> -->
+
+    <style>
+        @keyframes octocat-wave {
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+        
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+        
+        .form-group input {
+            text-align: center;
+        }
+        
+        input::palaceholder {
+            /* Firefox, Chrome, Opera */
+            text-align: center;
+        }
+        
+        .form-group select {
+            /* Firefox, Chrome, Opera */
+            text-align: center;
+        }
+        
+        .page-footer {
+            padding-top: 0px;
+        }
+        
+        .page-footer .footer-copyright {
+            margin-top: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="/index">MetaData Collection</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/index">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/newMovie">New Movies</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/newsong">New Songs</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="page landing-page">
+
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="wrapper animated fadeIn" style="padding-top: 20px">
+
+                    <div class="block-heading">
+                        <h2>New Movie / Video </h2>
+                        <br>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing</p> -->
+                    </div>
+                    <form onsubmit="event.preventDefault();onFormSubmit();" id="newmovieform" action="/newMovie" method="POST">
+                        <% if (success_message != ''){ %>
+                            <div class="alert alert-dismissible alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong> <%= success_message %> </strong>
+                            </div>
+                            <% } %>
+                                <% if(error != '') {%>
+                                    <div class="alert alert-dismissible alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        <strong> <%= error %> </strong>
+                                    </div>
+                                    <%}%>
+                                        <!-- <div class="col-md-6"> -->
+                                        <div class="col-md-6 clean-pricing-item" style=" margin: auto; text-align: center; float: left;">
+
+                                            <div class="form-group">
+                                                <label for="moviename">Movie / Video Name</label>
+                                                <input type="text" class="form-control" name="moviename" id="moviename" autocomplete="off" palaceholder="moviename" required>
+                                            </div>
+                                            <div class="form-group" id="artistmul">
+                                                <label for="artistname">Artist Name </label>
+                                                <input type="text" class="" name="artistname" id="artistname" value="" autocomplete="off" palaceholder="artistname" />
+                                                <!-- <input type="text" id="accessories" value="" /> -->
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="director">Director</label>
+                                                <input type="text" class="" name="director" id="director" value="" autocomplete="off" palaceholder="director">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="producer">Producer</label>
+                                                <input type="text" class="" name="producer" id="producer" value="" autocomplete="off" palaceholder="producer">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="musiccompany">Music Company</label>
+                                                <input type="text" class="" name="musiccompany" id="musiccompany" value="" autocomplete="off" palaceholder="musiccompany">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="musicdirector">Music Director</label>
+                                                <input type="text" class="" name="musicdirector" id="musicdirector" value="" autocomplete="off" palaceholder="musicdirector">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lyricwriter">Lyric Writer</label>
+                                                <input type="text" class="" name="lyricwriter" id="lyricwriter" value="" autocomplete="off" palaceholder="lyricwriter">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="description">Description</label>
+                                                <textarea class="form-control" class="form-control" name="description" id="description" autocomplete="off" palaceholder="description" minlength="50" maxlength="500" rows="4" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="duration">Duration</label>
+                                                <input type="text" class="form-control" name="duration" id="duration" autocomplete="off" placeholder="HH:MM:SS" onkeypress="formatTime(this)" MaxLength="8" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="language">Language</label>
+                                                <input type="text" class="" name="language" id="language" autocomplete="off" palaceholder="language" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="genre">Genre</label>
+                                                <input type="text" class="" name="genre" id="genre" autocomplete="off" palaceholder="genre" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="category">Category</label>
+                                                <input type="text" class="" name="category" id="category" autocomplete="off" palaceholder="category" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="subcategory">Sub Category</label>
+                                                <input type="text" class="" name="subcategory" id="subcategory" autocomplete="off" palaceholder="subcategory" required>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 clean-pricing-item" style=" margin: auto; text-align: center;float: left;">
+                                            <!-- <div class="col-md-6"> -->
+                                            <div class="form-group">
+                                                <label for="mood">Mood</label>
+                                                <input type="text" class="" name="mood" id="mood" autocomplete="off" palaceholder="mood" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="type">Type (Video / Movie)</label>
+                                                <select class="form-control" name="type" id="type" required>
+                                                    <option value="video">Video</option>
+                                                    <option value="movie">Movie</option>
+                                                  </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="premium">Premium</label>
+                                                <select class="form-control" name="premium" id="premium" required>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                  </select>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="releasedate">Movie Release Date</label>
+                                                <input type="date" class="form-control" name="releasedate" id="releasedate" autocomplete="off" palaceholder="releasedate">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="livedate">Movie Platform Live Date</label>
+                                                <input type="date" class="form-control" name="livedate" id="livedate" autocomplete="off" palaceholder="livedate">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="rightsdate">Movie Rights Start Date</label>
+                                                <input type="date" class="form-control" name="rightsdate" id="rightsdate" autocomplete="off" palaceholder="rightsdate">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="rightsenddate">Movie Rights End Date</label>
+                                                <input type="date" class="form-control" name="rightsenddate" id="rightsenddate" autocomplete="off" palaceholder="rightsenddate" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="thumburl">Thumbnail URL</label>
+                                                <input type="url" class="form-control" name="thumburl" id="thumburl" autocomplete="off" palaceholder="thumburl" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contenturl">Content URL</label>
+                                                <input type="url" class="form-control" name="contenturl" id="contenturl" autocomplete="off" palaceholder="contenturl" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tags">Tags</label>
+                                                <input type="text" class="" name="tags" id="tags" value="" autocomplete="off" palaceholder="tags">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="viewscount">Views Count</label>
+                                                <input type="number" class="form-control" name="viewscount" id="viewscount" autocomplete="off" palaceholder="viewscount" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="likescount">Likes Count</label>
+                                                <input type="number" class="form-control" name="likescount" id="likescount" autocomplete="off" palaceholder="likescount" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="downloadscount">Download Count</label>
+                                                <input type="number" class="form-control" name="downloadscount" id="downloadscount" autocomplete="off" palaceholder="downloadscount" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sharecount">Share Count</label>
+                                                <input type="number" class="form-control" name="sharecount" id="sharecount" autocomplete="off" palaceholder="sharecount" required>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <button class="btn btn-primary btn-block" type="submit">Submit Data</button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="block-content table-responsive" id="book">
+
+
+            <table class="table" id="movieData">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">moviename</th>
+                        <th scope="col">artistname</th>
+                        <th scope="col">director</th>
+                        <th scope="col">producer</th>
+                        <th scope="col">musiccompany</th>
+                        <th scope="col">musicdirector</th>
+                        <th scope="col">lyricwriter</th>
+                        <th scope="col">description</th>
+                        <th scope="col">duration</th>
+                        <th scope="col">language</th>
+                        <th scope="col">genre</th>
+                        <th scope="col">category</th>
+                        <th scope="col">subcategory</th>
+                        <th scope="col">mood</th>
+                        <th scope="col">type</th>
+                        <th scope="col">premium</th>
+                        <th scope="col">releasedate</th>
+                        <th scope="col">livedate</th>
+                        <th scope="col">rightsdate</th>
+                        <th scope="col">rightsenddate</th>
+                        <th scope="col">thumburl</th>
+                        <th scope="col">contenturl</th>
+                        <th scope="col">tags</th>
+                        <th scope="col">viewscount</th>
+                        <th scope="col">likescount</th>
+                        <th scope="col">downloadscount</th>
+                        <th scope="col">sharecount</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <br>
+        <!-- <form action="/printmovies" method="POST"> -->
+        <button class="btn btn-primary btn-block" onclick="exportTableToExcel('movieData', 'MovieData')" type="submit">Download Data</button>
+        <!-- </form> -->
+    </main>
+
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© 2021 Copyright</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.min.js"></script>
+    <script>
+        var jsondata = <%-JSON.stringify(metadata)%>
+            // console.log(jsondata)
+    </script>
+
+    <script src="/js/form.js"></script>
+
+</body>
+
+</html>

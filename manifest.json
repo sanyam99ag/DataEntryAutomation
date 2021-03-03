@@ -1,0 +1,15 @@
+{
+    "name": "MetaData Collection",
+    "short_name": "MetaDataCollection",
+    "theme_color": "#ffcbe4",
+    "background_color": "#fa99ca",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "",
+    "description": "Website to input meta data of video / movie / song for further processing",
+    "orientation": "any",
+    "icons": [{
+        "src": "/img/logo.svg",
+        "sizes": "1024x1024"
+    }]
+}
