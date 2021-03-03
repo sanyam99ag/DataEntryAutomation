@@ -153,7 +153,7 @@ $(document).ready(function() {
         width: 'resolve'
     });
     $('#category').select2({
-        data: jsondta.category,
+        data: jsondata.category,
         placeholder: "Select items from List",
         dropdownAutoWidth: true,
         width: 'resolve'
