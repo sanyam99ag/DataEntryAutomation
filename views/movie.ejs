@@ -18,6 +18,7 @@
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src="/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- select2 Liberary for multiselect dropdown -->
     <script src="/js/select2.min.js"></script>
@@ -72,7 +73,6 @@
             margin-top: 0px;
         }
     </style>
-
 </head>
 
 <body>
@@ -285,14 +285,11 @@
                 </thead>
                 <tbody>
 
-
-
-
                 </tbody>
             </table>
 
 
-            <button class="btn btn-primary btn-block" onclick="exportTableToExcel('movieData', 'MovieData')" type="submit">Download Data</button>
+            <button class="btn btn-primary btn-block" onclick="fnExcelReport()" type="submit">Download Data</button>
         </div>
         <br>
         <!-- <form action="/printmovies" method="POST"> -->

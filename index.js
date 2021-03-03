@@ -116,6 +116,7 @@ app.post('/populate', async(req, res) => {
     var type = [];
     var premium = [];
     var tags = [];
+    var version = [];
     var entry = {};
     sampleFile.mv(uploadPath, async(err) => {
         if (err)
@@ -249,6 +250,13 @@ app.post('/populate', async(req, res) => {
                             });
                             tags.push(newEntry);
                         }
+                        if (rows[0][j] == 'version') {
+                            const newEntry = ({
+                                id: rows[i][j],
+                                text: rows[i][j]
+                            });
+                            version.push(newEntry);
+                        }
 
                     }
                 }
@@ -271,7 +279,7 @@ app.post('/populate', async(req, res) => {
                     type: type,
                     premium: premium,
                     tags: tags,
-                    entry: entry
+                    version: version
                 });
                 dataset.save(async(error, savedEntry) => {
                     if (error) {

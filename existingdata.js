@@ -16,7 +16,8 @@ const dataSchema = new mongoose.Schema({
     mood: [],
     type: [],
     premium: [],
-    tags: []
+    tags: [],
+    version: []
 });
 
 module.exports = new mongoose.model("ExistingData", dataSchema);
