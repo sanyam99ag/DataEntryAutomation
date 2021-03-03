@@ -147,7 +147,7 @@ $(document).ready(function() {
         width: 'resolve'
     });
     $('#genre').select2({
-        data: jsondata.genere,
+        data: jsondata.genre,
         placeholder: "Select items from List",
         dropdownAutoWidth: true,
         width: 'resolve'
