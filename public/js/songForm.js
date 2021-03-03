@@ -541,37 +541,37 @@ function onEdit(td) {
 
 }
 
-function updateRecord(formData) {
-    selectedRow.cells[1].innerHTML = formdata.albumname;
-    selectedRow.cells[2].innerHTML = formdata.artistname.join(":");
-    selectedRow.cells[3].innerHTML = formdata.director.join(":");
-    selectedRow.cells[4].innerHTML = formdata.producer.join(":");
-    selectedRow.cells[5].innerHTML = formdata.musiccompany.join(":");
-    selectedRow.cells[6].innerHTML = formdata.musicdirector.join(":");
-    selectedRow.cells[7].innerHTML = formdata.lyricwriter.join(":");
-    selectedRow.cells[8].innerHTML = formdata.releasedate;
-    selectedRow.cells[9].innerHTML = formdata.livedate;
-    selectedRow.cells[10].innerHTML = formdata.rightsdate;
-    selectedRow.cells[11].innerHTML = formdata.rightsenddate;
-    selectedRow.cells[12].innerHTML = formdata.description;
-    selectedRow.cells[13].innerHTML = formdata.duration;
-    selectedRow.cells[14].innerHTML = formdata.upc;
-    selectedRow.cells[15].innerHTML = formdata.isrccode;
-    selectedRow.cells[16].innerHTML = formdata.language;
-    selectedRow.cells[17].innerHTML = formdata.genre;
-    selectedRow.cells[18].innerHTML = formdata.category;
-    selectedRow.cells[19].innerHTML = formdata.subcategory;
-    selectedRow.cells[20].innerHTML = formdata.mood;
-    selectedRow.cells[21].innerHTML = formdata.version;
-    selectedRow.cells[22].innerHTML = formdata.type;
-    selectedRow.cells[23].innerHTML = formdata.tags.joinpremium;
-    selectedRow.cells[24].innerHTML = formdata.thumburl;
-    selectedRow.cells[25].innerHTML = formdata.contenturl;
-    selectedRow.cells[26].innerHTML = formdata.tags.join(",");
-    selectedRow.cells[27].innerHTML = formdata.playcount;
-    selectedRow.cells[28].innerHTML = formdata.likescount;
-    selectedRow.cells[29].innerHTML = formdata.downloadscount;
-    selectedRow.cells[30].innerHTML = formdata.sharecount;
+function updateRecord(formDatas) {
+    selectedRow.cells[1].innerHTML = formDatas.albumname;
+    selectedRow.cells[2].innerHTML = formdatas.artistname.join(":");
+    selectedRow.cells[3].innerHTML = formdatas.director.join(":");
+    selectedRow.cells[4].innerHTML = formdatas.producer.join(":");
+    selectedRow.cells[5].innerHTML = formdatas.musiccompany.join(":");
+    selectedRow.cells[6].innerHTML = formdatas.musicdirector.join(":");
+    selectedRow.cells[7].innerHTML = formdatas.lyricwriter.join(":");
+    selectedRow.cells[8].innerHTML = formdatas.releasedate;
+    selectedRow.cells[9].innerHTML = formdatas.livedate;
+    selectedRow.cells[10].innerHTML = formdatas.rightsdate;
+    selectedRow.cells[11].innerHTML = formdatas.rightsenddate;
+    selectedRow.cells[12].innerHTML = formdatas.description;
+    selectedRow.cells[13].innerHTML = formdatas.duration;
+    selectedRow.cells[14].innerHTML = formdatas.upc;
+    selectedRow.cells[15].innerHTML = formdatas.isrccode;
+    selectedRow.cells[16].innerHTML = formdatas.language;
+    selectedRow.cells[17].innerHTML = formdatas.genre;
+    selectedRow.cells[18].innerHTML = formdatas.category;
+    selectedRow.cells[19].innerHTML = formdatas.subcategory;
+    selectedRow.cells[20].innerHTML = formdatas.mood;
+    selectedRow.cells[21].innerHTML = formdatas.version;
+    selectedRow.cells[22].innerHTML = formdatas.type;
+    selectedRow.cells[23].innerHTML = formdatas.tags.joinpremium;
+    selectedRow.cells[24].innerHTML = formdatas.thumburl;
+    selectedRow.cells[25].innerHTML = formdatas.contenturl;
+    selectedRow.cells[26].innerHTML = formdatas.tags.join(",");
+    selectedRow.cells[27].innerHTML = formdatas.playcount;
+    selectedRow.cells[28].innerHTML = formdatas.likescount;
+    selectedRow.cells[29].innerHTML = formdatas.downloadscount;
+    selectedRow.cells[30].innerHTML = formdatas.sharecount;
 }
 
 function onDelete(td) {
