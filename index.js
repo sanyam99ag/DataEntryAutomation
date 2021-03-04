@@ -60,7 +60,7 @@ app.use(async(req, res, next) => {
 });
 
 // Mongoose connection
-mongoose.connect('mongodb+srv://datacollection:datacollection@datacollection.xnm84.mongodb.net/datacollection?retryWrites=true&w=majority' || 'mongodb://localhost/metadatas', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/metadatas', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log('Database connected')).catch(err => console.log("database connectivity error " + err));
