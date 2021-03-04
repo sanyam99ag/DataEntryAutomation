@@ -3,9 +3,6 @@ const mongoose = require('mongoose')
 const bodyparser = require('body-parser');
 
 // Mongoose Models Import
-// const SongData = require('./songdata.js')
-// const MovieData = require('./moviedata.js');
-
 const ExistingData = require('./existingdata.js');
 const DataTemplate = require('./datatemplate.js');
 
@@ -131,25 +128,6 @@ app.post('/populate', async(req, res) => {
                     if (rows[i][j] != null) {
 
                         if (rows[0][j] == 'artistname') {
-
-                            // const newEntry = new DataTemplate({
-                            //     id: rows[i][j],
-                            //     text: rows[i][j]
-                            // });
-                            // newEntry.save((error, savedEntry) => {
-                            //     if (error) {
-                            //         console.log(error);
-                            //         return res.status(404).json({ success: false, msg: "Something went wrong. Please try again" });
-                            //     }
-                            //     if (savedEntry) {
-                            //         // console.log(savedEntry.id)
-                            //         // console.log(savedEntry._id)
-                            //         entry.id = savedEntry.id;
-                            //         artistname.push(entry);
-                            //     }
-                            //     // console.log(entry)
-                            //     // console.log(artistname)
-                            // });
                             const newEntry = ({
                                 id: rows[i][j],
                                 text: rows[i][j]
@@ -299,31 +277,6 @@ app.post('/populate', async(req, res) => {
 
     res.redirect('/')
 
-
-    // var entry;
-    // const newEntry = await new DataTemplate({
-    //     id: entry.id,
-    //     text: entry.text
-    // });
-
-    // newEntry.save((error, savedEntry) => {
-    //     if (error) {
-    //         console.log(error);
-    //         return res.status(404).json({ success: false, msg: "Something went wrong. Please try again" });
-    //     }
-
-    //     ExistingData.head.push(savedEntry);
-    //     ExistingData.save(async(error, savedEntry) => {
-    //         if (error) {
-    //             console.log(error);
-    //             return res.status(404).json({ success: false, msg: "Something went wrong. Please try again" });
-    //         }
-
-    //         req.flash('success_message', "Data Saved!");
-
-    //     });
-
-    // });
 });
 
 
@@ -353,63 +306,6 @@ app.get('/newsong', async(req, res) => {
         res.render('song', { 'metadata': metadata });
     });
 })
-
-
-// Test Route
-// app.get('/test', async(req, res) => {
-//     ExistingData.find().exec(async(error, dataset) => {
-//         if (error) {
-//             console.log(error);
-//             return res.redirect('/404')
-//         }
-//         // console.log(dataset)
-//         // for (i in dataset)
-//         // console.log(dataset.artistname[0])
-//         res.json(dataset[0]);
-//     });
-// })
-
-
-// app.get('/newMovie', async(req, res) => {
-//     var moviedata;
-//     var existingdata;
-//     MovieData.find().populate("data").exec(async(error, founddata) => {
-//         if (error) {
-//             console.log(error);
-//             return res.redirect('/404')
-//         }
-
-//         if (!founddata) {
-//             console.log("data does not exist");
-//             return res.redirect('/404')
-//         }
-
-//         // console.log(founddata);
-//         moviedata = { founddata };
-//     });
-//     ExistingData.find().populate("data").exec(async(error, foundexisting) => {
-//         if (error) {
-//             console.log(error);
-//             return res.redirect('/404')
-//         }
-
-//         if (!foundexisting) {
-//             console.log("data does not exist");
-//             return res.redirect('/404')
-//         }
-
-//         existingdata = { foundexisting };
-//     });
-//     res.render('movie', { moviedata, existingdata })
-//     // res.render('movie', { moviedata })
-//         // res.render('movie');
-
-// })
-
-
-
-
-
 
 
 app.listen(PORT, () => console.log(`Listening to the port ${PORT}`));

@@ -70,38 +70,6 @@ function formatTime(timeInput) {
 // BIND DATA TO THE INPUT BOX USING "Select2" liberaty immidiatly after page is loaded.
 $(document).ready(function() {
 
-    // THE JSON ARRAY.
-    var acceArray = [{
-        // id: '1',
-        text: 'option A',
-        id: 'option A'
-    }, {
-        // id: '2',
-        text: 'option B',
-        id: 'option B'
-    }, {
-        // id: '3',
-        text: 'option C',
-        id: 'option C'
-    }, {
-        // id: '4',
-        text: 'option D',
-        id: 'option D',
-    }, {
-        // id: '5',
-        text: 'option E',
-        id: 'option E'
-    }, {
-        // id: '6',
-        text: 'option F',
-        id: 'option F'
-    }, {
-        // id: '7',
-        text: 'option G',
-        id: 'option G'
-    }];
-
-
 
     $('#artistname').select2({
         data: jsondata.artistname,
