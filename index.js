@@ -25,6 +25,7 @@ const app = express();
 
 
 PORT = process.env.PORT || 5000;
+MONGODB_URI = 'mongodb+srv://datacollection:datacollection@datacollection.xnm84.mongodb.net/datacollection?retryWrites=true&w=majority';
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
