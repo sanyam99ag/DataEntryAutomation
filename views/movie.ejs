@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src="/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
@@ -101,7 +100,7 @@
                         <br>
                         <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing</p> -->
                     </div>
-                    <form onsubmit="event.preventDefault();onFormSubmit();" id="newmovieform" action="/newMovie" method="POST">
+                    <form onsubmit="event.preventDefault();onFormSubmit();" class="clean-pricing-item" id="newmovieform" action="/newMovie" method="POST">
                         <% if (success_message != ''){ %>
                             <div class="alert alert-dismissible alert-success">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -115,7 +114,7 @@
                                     </div>
                                     <%}%>
                                         <!-- <div class="col-md-6"> -->
-                                        <div class="col-md-6 clean-pricing-item" style=" margin: auto; text-align: center; float: left;">
+                                        <div class="col-md-6 " style=" margin: auto; text-align: center; float: left;">
 
                                             <div class="form-group">
                                                 <label for="moviename">Movie / Video Name</label>
@@ -172,7 +171,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6 clean-pricing-item" style=" margin: auto; text-align: center;float: left;">
+                                        <div class="col-md-6 " style=" margin: auto; text-align: center;float: left;">
                                             <!-- <div class="col-md-6"> -->
                                             <div class="form-group">
                                                 <label for="mood">Mood</label>
@@ -246,52 +245,58 @@
 
                     </form>
                 </div>
+                <!-- </div>
+        </section> -->
+                <div class=" block-content " id="book">
+
+
+                    <table class="table table-responsive" id="movieData">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">moviename</th>
+                                <th scope="col">artistname</th>
+                                <th scope="col">director</th>
+                                <th scope="col">producer</th>
+                                <th scope="col">musiccompany</th>
+                                <th scope="col">musicdirector</th>
+                                <th scope="col">lyricwriter</th>
+                                <th scope="col">description</th>
+                                <th scope="col">duration</th>
+                                <th scope="col">language</th>
+                                <th scope="col">genre</th>
+                                <th scope="col">category</th>
+                                <th scope="col">subcategory</th>
+                                <th scope="col">mood</th>
+                                <th scope="col">type</th>
+                                <th scope="col">premium</th>
+                                <th scope="col">releasedate</th>
+                                <th scope="col">livedate</th>
+                                <th scope="col">rightsdate</th>
+                                <th scope="col">rightsenddate</th>
+                                <th scope="col">thumburl</th>
+                                <th scope="col">contenturl</th>
+                                <th scope="col">tags</th>
+                                <th scope="col">viewscount</th>
+                                <th scope="col">likescount</th>
+                                <th scope="col">downloadscount</th>
+                                <th scope="col">sharecount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="28"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <br>
+
+                    <button class="btn btn-outline-primary btn-block" onclick="fnExcelReport()" type="submit">    &#11015;&#65039; Download Data     &#11015;&#65039;</button>
+                </div>
             </div>
         </section>
-        <div class="block-content table-responsive" id="book">
-
-
-            <table class="table" id="movieData">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">moviename</th>
-                        <th scope="col">artistname</th>
-                        <th scope="col">director</th>
-                        <th scope="col">producer</th>
-                        <th scope="col">musiccompany</th>
-                        <th scope="col">musicdirector</th>
-                        <th scope="col">lyricwriter</th>
-                        <th scope="col">description</th>
-                        <th scope="col">duration</th>
-                        <th scope="col">language</th>
-                        <th scope="col">genre</th>
-                        <th scope="col">category</th>
-                        <th scope="col">subcategory</th>
-                        <th scope="col">mood</th>
-                        <th scope="col">type</th>
-                        <th scope="col">premium</th>
-                        <th scope="col">releasedate</th>
-                        <th scope="col">livedate</th>
-                        <th scope="col">rightsdate</th>
-                        <th scope="col">rightsenddate</th>
-                        <th scope="col">thumburl</th>
-                        <th scope="col">contenturl</th>
-                        <th scope="col">tags</th>
-                        <th scope="col">viewscount</th>
-                        <th scope="col">likescount</th>
-                        <th scope="col">downloadscount</th>
-                        <th scope="col">sharecount</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-
-
-            <button class="btn btn-primary btn-block" onclick="fnExcelReport()" type="submit">Download Data</button>
-        </div>
         <br>
     </main>
 
